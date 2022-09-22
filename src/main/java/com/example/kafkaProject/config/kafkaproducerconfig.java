@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class producerconfig {
+public class kafkaproducerconfig {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapserver;
 
