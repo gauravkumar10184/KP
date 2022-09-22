@@ -11,6 +11,6 @@ public class kafkaListener {
             groupId = "groupId"
     )
      void listener(String data){
-      System.out.println("Message "+data);
+      System.out.println("Message is -> "+data);
      }
 }

@@ -1,4 +1,5 @@
 package com.example.kafkaProject.Controller;
+import com.example.kafkaProject.domain.msgContent;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,8 +16,8 @@ public class messageController {
         this.kafkaTemplate = kafkaTemplate;
     }
     @PostMapping
-    public void publish(@RequestBody String msg){
-        kafkaTemplate.send("demo-topic",msg);
+    public void publish(@RequestBody msgContent msg){
+        kafkaTemplate.send("demo-topic",msg.getMessage());
 
     }
 }
