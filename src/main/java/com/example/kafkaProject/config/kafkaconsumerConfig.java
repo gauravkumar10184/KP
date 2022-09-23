@@ -26,6 +26,7 @@ public class kafkaconsumerConfig {
         map.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringSerializer.class);
         return map;
     }
+    //deserializer converts byes to object(data) i.e original form
     @Bean
     public ConsumerFactory<String,String> consumerFactory(){
         return new DefaultKafkaConsumerFactory<>(consumerConfig());

@@ -14,6 +14,7 @@ import java.util.Map;
 
 @Configuration
 public class kafkaproducerconfig {
+    //value storing the address of the broker
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapserver;
 
@@ -24,6 +25,8 @@ public class kafkaproducerconfig {
         map.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
          return map;
     }
+    // making producer configurations
+    // serializer converts the object(data) to the bytes
     @Bean
     public ProducerFactory<String,String> producerFactory(){
         return new DefaultKafkaProducerFactory<>(producerConfig());

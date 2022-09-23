@@ -9,6 +9,7 @@ import org.springframework.kafka.config.TopicBuilder;
 public class kafkatopicConfig {
     @Bean
     public NewTopic topicConfig(){
+        //creation of topic with name "demo-topic"
         return TopicBuilder.name("demo-topic")
                 .build();
     }
